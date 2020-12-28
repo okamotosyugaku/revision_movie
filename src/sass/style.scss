@@ -1,0 +1,18 @@
+@import "variable";
+@import "~yui/cssreset/cssreset-min";
+@import "base";
+@import "layout";
+@import "animation";
+
+@media(min-width: 769px) {
+  @import "header_pc";
+}
+@media(max-width: 768px) {
+  @import "header_sp";
+} 
+@media(min-width: 769px) {
+  @import "_top_pc";
+}
+@media(max-width: 768px) {
+  @import "_top_sp";
+} 

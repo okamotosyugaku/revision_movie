@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src:
+          url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff2) format('woff2'),
+          url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.woff) format('woff'),
+          url(//fonts.gstatic.com/ea/notosansjp/v5/NotoSansJP-Regular.otf) format('opentype');
+}
+html {
+  font-size: 10px;
+}
+body {
+  color: $black-color-01;
+  font-family: 'Hiragino Kaku Gothic ProN', 'メイリオ', sans-serif;
+}
+input[type="submit"],
+input[type="button"] {
+  border-radius: 0;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: button;
+  appearance: button;
+  box-sizing: border-box;
+  &::-webkit-search-decoration {
+    display: none;
+  }
+  &:focus {
+    outline-offset: -2px;
+  }
+}
+input, textarea {
+  box-sizing: border-box;
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+a {
+  text-decoration: none;
+}
+* {
+  box-sizing: border-box;
+  color: #000;
+  outline: none;
+}
+
+@media(min-width: 769px) {
+  .page-inner {
+    min-width: 1000px;
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0 10px;
+  }  
+  .sp {
+    display: none;
+  }
+}
+@media(max-width: 768px) {
+  .page-inner {
+    width: 92vw;
+    margin-right: auto;
+    margin-left: auto;
+  }  
+  .pc {
+    display: none;
+  }
+} 
+
+[style="text-align: center;"] {
+  display: none;
+}
