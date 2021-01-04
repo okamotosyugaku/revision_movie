@@ -208,7 +208,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      padding: 50px 50px 0 0;
+      padding: 50px 30px 0 0;
       &_ttl {
         font-size: 24px;
         font-weight: bold;
@@ -239,7 +239,7 @@
     }
     &:nth-of-type(even) {
       .strengths__ele_txtWrap {
-        padding: 50px 0 0 50px;
+        padding: 50px 0 0 30px;
       }
     }
   }
@@ -317,8 +317,7 @@
     margin-top: 50px;
   }
   &__ele {
-    display: flex;
-    justify-content: center;
+    text-align: center;
     width: calc(100% / 3);
     &:nth-of-type(n + 4) {
       margin-top: 60px;
@@ -339,11 +338,13 @@
       }
     }
     &_ttl {
+      text-align: left;
       font-size: 20px;
       font-weight: bold;
       margin-top: 15px;
     }
     &_txt {
+      text-align: left;
       margin-top: 15px;
       font-size: 14px;
     }
@@ -353,12 +354,13 @@
     margin-top: 80px;
     font-size: 46px;
     font-weight: bold;
-    color: #950f0f;
     line-height: 0.6;
+    &,* {
+      color: #950f0f;
+    }
     &--sm {
       display: inline-block;
       font-size: 16px;
-      color: #950f0f;
     }
   }
 }
@@ -483,19 +485,22 @@
   }
   &__ele {
     background-color: #fff;
+    box-shadow: 5px 5px 0 #ececec;
+    counter-reset: comment;
     &:nth-of-type(n + 2) {
       margin-top: 45px;
     }
     &_wrap {
       display: flex;
-      padding: 20px 40px;
+      padding: 20px 40px 0;
     }
     &_img {
       width: 200px;
+      margin-bottom: 20px;
     }
     &_right {
       width: calc(100% - 200px);
-      padding: 15px 0 0 80px;
+      padding: 30px 0 0 80px;
     }
     &_detail {
       display: flex;
@@ -510,6 +515,34 @@
       dd {
         width: calc(100% - 120px);
         font-size: 16px;
+        &.comment {
+          h4 {
+            counter-increment: comment;
+            &::before {
+              content: counter(comment)". ";
+            }
+          }
+          p {
+            color: #666;
+            margin-top: 5px;
+            &::before {
+              content: "ー";
+            }
+          }
+          .comment_detail {
+            display: none;
+            padding-bottom: 20px;
+            height: 0;
+            transform: 0.3s;
+            h4 {
+              margin-top: 20px;
+            }
+            &.active {
+              display: block;
+              height: auto;
+            }
+          }
+        }
       }
     }
     &_link {
@@ -519,6 +552,16 @@
       padding: 7px 0;
       font-size: 14px;
       font-weight: bold;
+      cursor: pointer;
+      &::before {
+        display: block;
+        content: "MORE ▼";
+      }
+      &.active {
+        &::before {
+          content: "CLOSE ▲";
+        }
+      }
     }
   }
 }
@@ -688,6 +731,7 @@
       margin-right: auto;
       margin-left: auto;
       [type="submit"] {
+        cursor: pointer;
         display: block;
         width: 100%;
         padding: 20px 0;
@@ -696,6 +740,12 @@
         font-weight: bold;
         font-size: 24px;
         letter-spacing: 2px;
+        transition: 0.3s;
+        &:hover {
+          background-color: #f73859;
+          background-position: right 2% center;
+          box-shadow: 0 0 0 0.1875rem white, 0 0 0 0.375rem #f73859;
+        }
       }
     }
   }
@@ -743,6 +793,9 @@
           img {
             height: 100%;
             width: auto;
+            @media all and (-ms-high-contrast: none) {
+              width: 100%;
+            }
           }
         }
       }

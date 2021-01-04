@@ -42,7 +42,7 @@
   display: block;
   background: url(../../assets/images/top/mv.jpg) center center;
   background-size: cover;
-  height: 100vh;
+  height: 120vw;
   padding: 10vw 0;
   &__txtWrap {
     position: absolute;
@@ -74,16 +74,16 @@
 }
 .catch {
   position: relative;
-  padding: 10vw 0;
+  padding: 18vw 0 10vw;
   overflow: hidden;
   &::after {
     content: "";
-    background: url(../../assets/images/top/catch_img.png);
-    background: #f2f3f5;
-    height: 70vw;
+    background: #f2f3f5 url(../../assets/images/top/catch_img.png);
+    background-size: cover;
+    height: 80vw;
     width: 100vw;
     position: absolute;
-    top: 18vw;
+    top: 13vw;
     left: 50%;
     z-index: 0;
   }
@@ -319,12 +319,13 @@
     margin-top: 12vw;
     font-size: 8vw;
     font-weight: bold;
-    color: #950f0f;
     line-height: 0.8;
+    &,* {
+      color: #950f0f;
+    }
     &--sm {
       display: inline-block;
       font-size: 3.5vw;
-      color: #950f0f;
     }
   }
 }
@@ -442,6 +443,7 @@
   }
   &__ele {
     background: #fff;
+    box-shadow: 1vw 1vw 0 #ececec;
     &:nth-of-type(n + 2) {
       margin-top: 5vw;
     }
@@ -467,6 +469,34 @@
       dd {
         font-size: 3.6vw;
         margin-top: 1vw;
+        &.comment {
+          h4 {
+            counter-increment: comment;
+            &::before {
+              content: counter(comment)". ";
+            }
+          }
+          p {
+            color: #666;
+            margin-top: 1vw;
+            &::before {
+              content: "ー";
+            }
+          }
+          .comment_detail {
+            display: none;
+            padding-bottom: 5vw;
+            height: 0;
+            transform: 0.3s;
+            h4 {
+              margin-top: 5vw;
+            }
+            &.active {
+              display: block;
+              height: auto;
+            }
+          }
+        }
       }
     }
     &_link {
@@ -476,6 +506,16 @@
       padding: 1vw 0;
       font-size: 4vw;
       font-weight: bold;
+      cursor: pointer;
+      &::before {
+        display: block;
+        content: "MORE ▼";
+      }
+      &.active {
+        &::before {
+          content: "CLOSE ▲";
+        }
+      }
     }
   }
 }
@@ -639,12 +679,12 @@
       [type="submit"] {
         display: block;
         width: 100%;
-        padding: 3vw 4vw 3vw 0;
+        padding: 5vw 4vw 5vw 0;
         background: #202e55 url(../../assets/images/top/btn_arrow.svg) no-repeat right 4% center;
         background-size: 4vw;
         color: #fff;
         font-weight: bold;
-        font-size: 4vw;
+        font-size: 4.2vw;
         letter-spacing: 0.3vw;
       }
     }
@@ -671,7 +711,7 @@
     &_ele {
       display: grid;
       width: calc(100% / 2);
-      background: #344e91;
+      background: #d6d6d6;
       border: 1px solid #fff;
       &:last-of-type {
         width: 100%;

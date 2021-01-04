@@ -8,15 +8,18 @@
   height: 13vw;
   background: rgba(255, 255, 255, 0.9);
   z-index: 10;
+  transform: translateY(-150%);
+  transition: 0.5s;
+  &.active {
+    transform: translateY(0);
+  }
   &__left {
     width: 30vw;
     left: 3vw;
     top: 50%;
     transform: translateY(-50%);
     position: absolute;
-    a {
-      display: grid;
-    }
+    display: grid;
   }
   .page-inner {
     position: relative;
@@ -33,7 +36,7 @@
     left: 0;
     top: 13vw;
     overflow-y: scroll;
-    padding: 12vw 0 4vw;
+    padding: 8vw 0 4vw;
     width: 100vw;
     height: calc(100vh - 13vw);
     background: rgba(255, 255, 255, 0.9);
@@ -47,10 +50,15 @@
   }
   &__ele {
     text-align: center;
-    &:nth-of-type(n + 2) {
-      border-top: 2px dashed #ddd;
-      margin-top: 3vw;
+    a {
+      display: block;
       padding-top: 4vw;
+      padding-bottom: 3vw;
+    }
+    &:nth-of-type(n + 2) {
+      a {
+        border-top: 2px dashed #ddd;
+      }
     }
     figure {
       height: 4vw;
@@ -136,7 +144,25 @@
         bottom: auto;
       }
     }
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      height: calc(100% - 1vw);
+      width: calc(100% - 2vw);
+      border: 1px solid #fff;
+      border-top: none;
+      border-radius: 0 0 1.5vw 1.5vw;
+      opacity: 0;
+      transition: 0.3s;
+      pointer-events: none;
+    }
     &.active {
+      &::after {
+        opacity: 1;
+      }
       span {
         bottom: auto;
         top: 50%;

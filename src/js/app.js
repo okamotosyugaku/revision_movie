@@ -1,161 +1,139 @@
 "use strict";
-//# sourceMappingURL=app.js.map
 
 class h_menu {
   constructor() {
-    this.h_line = document.querySelector(".header__h-menu")
-    this.h_list = document.querySelector(".header__list")
+    this.h_line = document.querySelector(".header__h-menu");
+    this.h_list = document.querySelector(".header__list");
+    this.h_ele = document.querySelectorAll(".header__ele a");
+    this.h_top = document.querySelector(".header");
+    this.delay_timeoutId;
+    this.click();
+    this.delay();
   }
   click() {
     this.h_line.addEventListener("click", () => {
       this.h_line.classList.toggle("active");
       this.h_list.classList.toggle("active");
     }, false);
+
+    for(let n = 0; n < this.h_ele.length; n++) {
+      this.h_ele[n].addEventListener("click", () => {
+        this.h_line.classList.remove("active");
+        this.h_list.classList.remove("active");
+      }, false);
+    }
+  }  
+  delay() {
+    window.addEventListener("scroll", () => {
+      if ( this.delay_timeoutId ) return ;
+      setTimeout(() => {
+        this.delay_timeoutId = 0;
+        if(window.pageYOffset > 50) {
+          this.h_top.classList.add("active")
+        } else {
+          this.h_top.classList.remove("active") 
+        }
+      }, 300);
+    },false)
   }
 }
 
-new h_menu().click();
-
-
-/**
- * author Christopher Blum
- *    - based on the idea of Remy Sharp, http://remysharp.com/2009/01/26/element-in-view-event-plugin/
- *    - forked from http://github.com/zuk/jquery.inview/
- */
-(function (factory) {
-  if (typeof define == 'function' && define.amd) {
-    // AMD
-    define(['jquery'], factory);
-  } else if (typeof exports === 'object') {
-    // Node, CommonJS
-    module.exports = factory(require('jquery'));
-  } else {
-      // Browser globals
-    factory(jQuery);
+class voice_more {
+  constructor() {
+    this.more_btn = document.querySelectorAll(".voice__ele_link");
+    this.comment_detail = document.querySelectorAll(".comment_detail");
+    this.click()
   }
-}(function ($) {
-
-  var inviewObjects = [], viewportSize, viewportOffset,
-      d = document, w = window, documentElement = d.documentElement, timer;
-
-  $.event.special.inview = {
-    add: function(data) {
-      inviewObjects.push({ data: data, $element: $(this), element: this });
-      // Use setInterval in order to also make sure this captures elements within
-      // "overflow:scroll" elements or elements that appeared in the dom tree due to
-      // dom manipulation and reflow
-      // old: $(window).scroll(checkInView);
-      //
-      // By the way, iOS (iPad, iPhone, ...) seems to not execute, or at least delays
-      // intervals while the user scrolls. Therefore the inview event might fire a bit late there
-      //
-      // Don't waste cycles with an interval until we get at least one element that
-      // has bound to the inview event.
-      if (!timer && inviewObjects.length) {
-         timer = setInterval(checkInView, 250);
-      }
-    },
-
-    remove: function(data) {
-      for (var i=0; i<inviewObjects.length; i++) {
-        var inviewObject = inviewObjects[i];
-        if (inviewObject.element === this && inviewObject.data.guid === data.guid) {
-          inviewObjects.splice(i, 1);
-          break;
-        }
-      }
-
-      // Clear interval when we no longer have any elements listening
-      if (!inviewObjects.length) {
-         clearInterval(timer);
-         timer = null;
-      }
+  click() {
+    for(let n = 0; n < this.more_btn.length; n++) {
+      this.more_btn[n].addEventListener("click", () => {
+        this.more_btn[n].classList.toggle("active");
+        this.comment_detail[n].classList.toggle("active");
+      })
     }
-  };
-
-  function getViewportSize() {
-    var mode, domObject, size = { height: w.innerHeight, width: w.innerWidth };
-
-    // if this is correct then return it. iPad has compat Mode, so will
-    // go into check clientHeight/clientWidth (which has the wrong value).
-    if (!size.height) {
-      mode = d.compatMode;
-      if (mode || !$.support.boxModel) { // IE, Gecko
-        domObject = mode === 'CSS1Compat' ?
-          documentElement : // Standards
-          d.body; // Quirks
-        size = {
-          height: domObject.clientHeight,
-          width:  domObject.clientWidth
-        };
-      }
-    }
-
-    return size;
   }
+}
 
-  function getViewportOffset() {
-    return {
-      top:  w.pageYOffset || documentElement.scrollTop   || d.body.scrollTop,
-      left: w.pageXOffset || documentElement.scrollLeft  || d.body.scrollLeft
+class countUp {
+  constructor() {
+    this.num = document.querySelector(".works__num span");
+    this.count = 0;
+    this.observer_flag = false;
+    this.observer = new IntersectionObserver(() => {
+      if(this.observer_flag == false) {
+        this.observer_flag = true;
+      } else {
+        console.log("a");
+        this.up();
+      }
+    }, this.options);
+    this.options = {
+      root: null,
+      rootMargin: 0,
+      threshold: [0.25, 0.5]
     };
+    this.observer.observe(this.num);
   }
-
-  function checkInView() {
-    if (!inviewObjects.length) {
-      return;
-    }
-
-    var i = 0, $elements = $.map(inviewObjects, function(inviewObject) {
-      var selector  = inviewObject.data.selector,
-          $element  = inviewObject.$element;
-      return selector ? $element.find(selector) : $element;
-    });
-
-    viewportSize   = viewportSize   || getViewportSize();
-    viewportOffset = viewportOffset || getViewportOffset();
-
-    for (; i<inviewObjects.length; i++) {
-      // Ignore elements that are not in the DOM tree
-      if (!$.contains(documentElement, $elements[i][0])) {
-        continue;
+  up() {
+    var set = setInterval(() => {
+      this.count++;
+      this.num.innerHTML = this.count;
+      if(this.count > Number(this.num.getAttribute("countUp"))) {
+        clearInterval(set)
+        this.num.innerHTML = this.num.getAttribute("countUp");
       }
+    }, 25);
+  }
+}
 
-      var $element      = $($elements[i]),
-          elementSize   = { height: $element[0].offsetHeight, width: $element[0].offsetWidth },
-          elementOffset = $element.offset(),
-          inView        = $element.data('inview');
+new h_menu();
+new voice_more();
+new countUp();
+new WOW().init();
 
-      // Don't ask me why because I haven't figured out yet:
-      // viewportOffset and viewportSize are sometimes suddenly null in Firefox 5.
-      // Even though it sounds weird:
-      // It seems that the execution of this function is interferred by the onresize/onscroll event
-      // where viewportOffset and viewportSize are unset
-      if (!viewportOffset || !viewportSize) {
-        return;
-      }
+let h_height;
+let delay_timeoutId;
 
-      if (elementOffset.top + elementSize.height > viewportOffset.top &&
-          elementOffset.top < viewportOffset.top + viewportSize.height &&
-          elementOffset.left + elementSize.width > viewportOffset.left &&
-          elementOffset.left < viewportOffset.left + viewportSize.width) {
-        if (!inView) {
-          $element.data('inview', true).trigger('inview', [true]);
+window.addEventListener("resize", () => {
+  setTimeout(() => {
+    if ( delay_timeoutId ) return ;
+    delay_timeoutId = 0;
+    h_height = document.querySelector(".header").offsetHeight;
+  }, 200);
+}, false)
+
+window.addEventListener("load", () => {
+  h_height = document.querySelector(".header").offsetHeight;
+}, false)
+
+var Ease = {
+  easeInOut: t => t<.5 ? 4*t*t*t : (t-1)*(2*t-2)*(2*t-2)+1
+}
+var duration = 1000;
+window.addEventListener('DOMContentLoaded', () => {
+  var smoothScrollTriggers = document.querySelectorAll('a[href^="#"]');
+  smoothScrollTriggers.forEach(function (smoothScrollTrigger) {
+    smoothScrollTrigger.addEventListener('click', function (e) {
+      var href = smoothScrollTrigger.getAttribute('href');
+      var currentPostion = document.documentElement.scrollTop || document.body.scrollTop;
+      var targetElement = document.getElementById(href.replace('#', ''));
+      if (targetElement) {
+        e.preventDefault();
+        e.stopPropagation();
+        var targetPosition = window.pageYOffset + targetElement.getBoundingClientRect().top - h_height;
+        var startTime = performance.now();
+        var loop = function (nowTime) {
+          var time = nowTime - startTime;
+          var normalizedTime = time / duration;
+          if (normalizedTime < 1) {
+            window.scrollTo(0, currentPostion + ((targetPosition - currentPostion) * Ease.easeInOut(normalizedTime)));
+            requestAnimationFrame(loop);
+          } else {
+            window.scrollTo(0, targetPosition);
+          }
         }
-      } else if (inView) {
-        $element.data('inview', false).trigger('inview', [false]);
+        requestAnimationFrame(loop);
       }
-    }
-  }
-
-  $(w).on("scroll resize scrollstop", function() {
-    viewportSize = viewportOffset = null;
-  });
-
-  // IE < 9 scrolls to focused elements without firing the "scroll" event
-  if (!documentElement.addEventListener && documentElement.attachEvent) {
-    documentElement.attachEvent("onfocusin", function() {
-      viewportOffset = null;
     });
-  }
-}));
+  });
+});
