@@ -84,9 +84,9 @@
       letter-spacing: 1px;
     }
     &_txt {
-      font-size: 24px;
-      font-weight: bold;
+      font-size: 20px;
       letter-spacing: 1px;
+      line-height: 1.7;
     }
     &_link {
       margin-top: 30px;
@@ -95,7 +95,7 @@
 }
 .catch {
   position: relative;
-  padding: 180px 0 70px;
+  padding: 180px 0;
   overflow: hidden;
   &::after {
     content: "";
@@ -135,12 +135,11 @@
   }
 }
 .possible {
-  background: url(../../assets/images/top/possible_bg.jpg) center center;
-  background-size: cover;
-  padding: 80px 0 100px;
+  background: url(../../assets/images/top/possible_bg.jpg);
+  padding: 60px 0;
   text-align: center;
   * {
-    color: #fff;
+    color: #000;
   }
   &__ttl {
     font-size: 27px;
@@ -155,6 +154,16 @@
     font-size: 17px;
     &:nth-of-type(n + 7) {
       margin-top: 30px;
+    }
+    figure {
+      position: relative;
+      height: 60px;
+      img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
     }
   }
 }
@@ -235,6 +244,7 @@
       }
       &_txt {
         font-size: 14px;
+        line-height: 2;
       }
     }
     &:nth-of-type(even) {
@@ -303,7 +313,7 @@
   &__txt {
     text-align: center;
     margin-top: 40px;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.9;
   }
   &__logo_list { 
@@ -450,7 +460,7 @@
     &:nth-of-type(1)::before {
       display: none;
     }
-    &:nth-of-type(7)::after {
+    &:nth-of-type(8)::after {
       display: none;
     }
     &_ttl {

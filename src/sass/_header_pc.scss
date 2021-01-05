@@ -5,7 +5,7 @@
   display: flex;
   justify-content: space-between;
   width: 100vw;
-  height: 85px;
+  height: 75px;
   background-color: rgba(255, 255, 255, 0.9);
   z-index: 10;
   transform: translateY(-150%);
@@ -43,9 +43,17 @@
       position: relative;
       display: block;
       text-decoration: none;
-      color: #b3b3b3;
-      font-size: 1.2rem;
+      font-size: 1.7rem;
       transition: 0.3s;
+      font-weight: bold;
+      transition: 0.3s;
+      letter-spacing: 1px;
+      line-height: 1.4;
+      small {
+        font-size: 1.2rem;
+        color: #b3b3b3;
+        font-weight: lighter;
+      }
       &::after,&::before {
         content: "";
         position: absolute;
@@ -86,7 +94,7 @@
     text-align: center;
     display: flex;
     align-items: center;
-    height: 110px;
+    height: 100px;
     background:linear-gradient(to right, #c8296e, #c8555f); /* IE */
     padding: 0 13px;
     font-size: 1.4rem;

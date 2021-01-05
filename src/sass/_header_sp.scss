@@ -71,10 +71,14 @@
     }
     &_link {
       text-decoration: none;
-      color: #b3b3b3;
-      font-size: 4vw;
-      figure {
-        margin: 0;
+      color: #000;
+      font-size: 5vw;
+      font-weight: bold;
+      letter-spacing: 0.5vw;
+      small {
+        color: #b3b3b3;
+        font-size: 3.3vw;
+        font-weight: lighter;
       }
     }
   }
