@@ -285,7 +285,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 5vw;
+    margin-top: 12vw;
   }
   &__ele {
     display: flex;
@@ -315,6 +315,62 @@
     &_txt {
       margin-top: 2vw;
       font-size: 3.3vw;
+    }
+    &_hover {
+      display: none;
+    }
+    &_mov-wrap {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 100;
+      &--close {
+        display: inline-block;
+        position: absolute;
+        right: 0;
+        top: -4vw;
+        transform: translate(0, -100%);
+        height: 10vw;
+        width: 10vw;
+        background-color: #fff;
+        border-radius: 9999px;
+        pointer-events: none;
+        &::after,&::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(45deg);
+          height: 60%;
+          width: 2px;
+          background-color: #000;
+        }
+        &::before {
+          transform: translate(-50%, -50%) rotate(-45deg);
+        }
+      }
+    }
+    &_mov {
+      width: 90vw;
+      height: 60vw;
+    }
+    &_overlay {
+      position: fixed;
+      z-index: 99;
+      height: 100vh;
+      width: 100vw;
+      background-color: rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      opacity: 0;
+      pointer-events: none;
+      transition: .3s;
+      cursor: pointer;
+      &.active {
+        opacity: 1;
+        pointer-events: initial;
+      }
     }
   }
   &__num {

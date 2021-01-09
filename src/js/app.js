@@ -1,5 +1,8 @@
 "use strict";
 
+const body = document.querySelector("body");
+const overlay = document.querySelector(".works__ele_overlay");
+
 class h_menu {
   constructor() {
     this.h_line = document.querySelector(".header__h-menu");
@@ -86,9 +89,30 @@ class countUp {
   }
 }
 
+class mov_popup {
+  constructor() {
+    this.trigger = document.querySelectorAll(".works__ele");
+    this.click();
+  }
+  click() {
+    for(let n = 0; n < this.trigger.length; n++) {
+      this.trigger[n].addEventListener("click", function() {
+        this.src = this.getAttribute("data-src");
+        body.insertAdjacentHTML("beforeend", `<div class="works__ele_mov-wrap"><iframe class="works__ele_mov" src="${this.src}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><span class="works__ele_mov-wrap--close"></span></div>`);
+        overlay.classList.add("active");
+      }, false)
+    }
+    overlay.addEventListener("click", function() {
+      overlay.classList.remove("active");
+      document.querySelector(".works__ele_mov-wrap").remove()
+    },false)
+  }
+}
+
 new h_menu();
 new voice_more();
 new countUp();
+new mov_popup();
 new WOW().init();
 
 let h_height;
