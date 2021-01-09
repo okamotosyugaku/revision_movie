@@ -316,6 +316,38 @@
       margin-top: 2vw;
       font-size: 3.3vw;
     }
+    &_play {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      margin-top: 5vw;
+      background-color: #656565;
+      padding: 2vw 0;
+      color: #fff;
+      font-size: 3.6vw;
+      letter-spacing: 0.5vw;
+      margin-right: auto;
+      margin-left: auto;
+      span {
+        position: relative;
+        display: inline-block;
+        background-color: #fff;
+        border-radius: 9999px;
+        height: 4vw;
+        width: 4vw;
+        margin-left: 2vw;
+        &::after {
+          content: "";
+          position: absolute;
+          border: 1vw solid transparent;
+          border-left: 1.5vw solid #000;
+          top: 50%;
+          left: 0;
+          transform: translate(1.5vw, -50%);
+        }
+      }
+    }
     &_hover {
       display: none;
     }
