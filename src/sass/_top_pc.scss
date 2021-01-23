@@ -367,40 +367,19 @@
       justify-content: center;
       position: absolute;
       left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      min-height: calc(100% + 20px);
+      bottom: 0;
+      transform: translate(-50%, 0);
+      height: calc(100% - 173px);
       width: 100%;
       background-color: #fff;
       box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
       opacity: 0;
       pointer-events: none;
-      border-radius: 10px;
+      border-radius: 0 0 10px 10px;
       transition: .3s;
       padding: 10px 15px;
       cursor: pointer;
-      &_genre,&_c-name {
-        font-weight: bold;
-        font-size: 16px;
-      }
-      &_genre {
-        position: relative;
-        padding-bottom: 15px;
-        margin-bottom: 15px;
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translate(-50%, 50%);
-          height: 3px;
-          width: 70px;
-          background-color: #000;
-
-        }
-      }
-      &_purpose,&_performance {
-        margin-top: 15px;
+      &_performance {
         font-size: 14px;
         div {
           display: flex;
@@ -421,7 +400,7 @@
         align-items: center;
         justify-content: center;
         text-align: center;
-        margin-top: 20px;
+        margin-top: 15px;
         background-color: #000;
         padding: 5px 10px;
         color: #fff;
