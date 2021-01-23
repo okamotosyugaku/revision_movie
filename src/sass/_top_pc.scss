@@ -678,6 +678,8 @@
         &.comment {
           h4 {
             counter-increment: comment;
+            padding-left: 1.4em;
+            text-indent: -1.4em;
             &::before {
               content: counter(comment)". ";
             }
@@ -685,8 +687,10 @@
           p {
             color: #666;
             margin-top: 5px;
+            padding-left: 1.4em;
+            text-indent: -1.4em;
             &::before {
-              content: "ー";
+              content: "ー ";
             }
           }
           .comment_detail {
@@ -947,9 +951,10 @@
       }
       a {
         display: grid;
-        height: 12px;
+        font-size: 14px;
+        letter-spacing: 1px;
+        font-weight: bold;
         picture {
-          height: 12px;
           img {
             height: 100%;
             width: auto;

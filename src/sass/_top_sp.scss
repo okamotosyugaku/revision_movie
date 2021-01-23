@@ -285,14 +285,42 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 12vw;
+    margin: 5vw -1vw 0;
   }
   &__ele {
     display: flex;
     justify-content: center;
-    width: calc((100% / 2) - 2vw);
+    width: calc((100% / 2) - 1vw);
+    padding: 2.5vw;
+    box-shadow: 0 0 4vw #ddd;
+    border-radius: 2vw;
     &:nth-of-type(n + 3) {
-      margin-top: 5vw;
+      margin-top: 3vw;
+    }
+    &_img {
+      position: relative;
+      span {
+        display: inline-block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        height: 10vw;
+        width: 10vw;
+        background-color: #f00;
+        border-radius: 9999px;
+        opacity: 0.8;
+        &::after {
+          content: "";
+          position: absolute;
+          border: 2vw solid transparent;
+          border-left: 3vw solid #fff;
+          top: 50%;
+          left: 50%;
+          transform: translate(-0.9vw, -50%);
+      
+        }
+      }
     }
     &_tagWrap {
       display: flex;
@@ -322,17 +350,16 @@
       justify-content: center;
       text-align: center;
       margin-top: 5vw;
-      background-color: #656565;
       padding: 2vw 0;
-      color: #fff;
       font-size: 3.6vw;
       letter-spacing: 0.5vw;
       margin-right: auto;
       margin-left: auto;
+      border-radius: 1vw;
       span {
         position: relative;
         display: inline-block;
-        background-color: #fff;
+        background-color: #000;
         border-radius: 9999px;
         height: 4vw;
         width: 4vw;
@@ -341,7 +368,7 @@
           content: "";
           position: absolute;
           border: 1vw solid transparent;
-          border-left: 1.5vw solid #000;
+          border-left: 1.5vw solid #fff;
           top: 50%;
           left: 0;
           transform: translate(1.5vw, -50%);
@@ -407,7 +434,7 @@
   }
   &__num {
     text-align: right;
-    margin-top: 12vw;
+    margin-top: 8vw;
     font-size: 8vw;
     font-weight: bold;
     line-height: 0.8;
@@ -810,7 +837,10 @@
       }
       a {
         display: block;
-        padding: 3vw 0;
+        padding: 2.5vw 0;
+        font-size: 4vw;
+        color: #fff;
+        font-weight: bold;
       }
       img {
         height: 3vw;

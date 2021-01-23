@@ -14,10 +14,10 @@ body
         ul.header__list
           li.header__ele
             a.header__ele_link(href="#strengths") 
-              |4つの強み
+              |3つの強み
               br
               small
-                |4 STRENGTHS
+                |3 STRENGTHS
           li.header__ele
             a.header__ele_link(href="#technique")
               |動画手法
@@ -142,9 +142,9 @@ body
             |新卒採用
     section.strengths#strengths
       .page-inner
-        h2.strengths__ttl.sec__tll.wow.fadeInUp .movの4つの強み
+        h2.strengths__ttl.sec__tll.wow.fadeInUp .movの3つの強み
           br
-          span 4 STRENGTHS
+          span 3 STRENGTHS
         ul.strengths__list
           li.strengths__ele
             div
@@ -178,22 +178,6 @@ body
                     |当社では企画段階から制作後の運用まで一貫してサポートしています。
                     br
                     |Webサイト・SNSとの連携も対応しています。
-          li.strengths__ele
-            div
-              figure.strengths__ele_img.wow.fadeIn
-                img(src="../assets/images/top/strengths_img02.jpg", alt="卓越した撮影技術と豊富な撮影機材")
-              .strengths__ele_txtWrap
-                div
-                  h4.strengths__ele_txtWrap_ttl.wow.fadeIn(data-wow-delay="0.1s")
-                    span.strengths__ele_txtWrap_ttl--num
-                    br
-                    |卓越した撮影技術と豊富な撮影機材
-                  p.strengths__ele_txtWrap_txt.wow.fadeIn(data-wow-delay="0.3s")
-                    |動画のコンセプトに合わせて様々な技術と機材を用います。
-                    br
-                    |空中でのドローン撮影や写真の一部が動いて見えるシネマグラフ、
-                    br.pc
-                    |アニメーションやモーショングラフィックスまで幅広く表現できます。
           li.strengths__ele
             div
               figure.strengths__ele_img.wow.fadeIn
@@ -297,11 +281,32 @@ body
         h2.works__ttl.sec__tll.wow.fadeInUp 制作実績
           br
           span WORKS
+        p.works__txt.wow.fadeInUp
+          |地元栃木県を中心に、ベンチャー企業から大手企業まで様々な企業様からご依頼いただいております。
+          br
+          |動画制作の目的や活用シーンなどの情報もご紹介します。
+        ul.works__logo_list
+          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.1s")
+            figure.works__logo_ele_img
+              img(src="../assets/images/top/works_img01.png", alt="自治医科大学")
+          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.2s")
+            figure.works__logo_ele_img
+              img(src="../assets/images/top/works_img02.png", alt="ATELIER")
+          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.3s")
+            figure.works__logo_ele_img
+              img(src="../assets/images/top/works_img03.png", alt="NJKF")
+          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.4s")
+            figure.works__logo_ele_img
+              img(src="../assets/images/top/works_img04.png", alt="FORBUL")
+          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.5s")
+            figure.works__logo_ele_img
+              img(src="../assets/images/top/works_img05.png", alt="TAKA HARI English")
         ul.works__list
           li.works__ele.wow.fadeIn(data-wow-delay="0.1s" data-src="https://www.youtube.com/embed/aqa9h-nL-TA")
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo01.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -330,6 +335,7 @@ body
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo02.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -358,6 +364,7 @@ body
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo03.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -386,6 +393,7 @@ body
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo04.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -414,6 +422,7 @@ body
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo05.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -442,6 +451,7 @@ body
             .works__ele_wrap
               figure.works__ele_img
                 img(src="../assets/images/top/works_photo06.jpg", alt="ビューティーアトリエグループ  様")
+                span.sp
               .works__ele_tagWrap
                 span.works__ele_tagWrap--tag 実写
                 span.works__ele_tagWrap--tag 会社紹介・会社PR
@@ -470,24 +480,6 @@ body
           span(countUp="105") 105
           br
           small.works__num--sm CLIENTS
-        p.works__txt.wow.fadeInUp
-          |地元栃木県を中心に、会社規模や業種を問わず幅広いジャンルの動画制作を手掛けております。<br>動画制作の目的や活用シーンなどの情報もご紹介します。
-        ul.works__logo_list
-          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.1s")
-            figure.works__logo_ele_img
-              img(src="../assets/images/top/works_img01.png", alt="自治医科大学")
-          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.2s")
-            figure.works__logo_ele_img
-              img(src="../assets/images/top/works_img02.png", alt="ATELIER")
-          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.3s")
-            figure.works__logo_ele_img
-              img(src="../assets/images/top/works_img03.png", alt="NJKF")
-          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.4s")
-            figure.works__logo_ele_img
-              img(src="../assets/images/top/works_img04.png", alt="FORBUL")
-          li.works__logo_ele.wow.fadeInUp(data-wow-delay="0.5s")
-            figure.works__logo_ele_img
-              img(src="../assets/images/top/works_img05.png", alt="TAKA HARI English")
     section.plan#plan
       .page-inner
         h2.plan__ttl.sec__tll.wow.fadeInUp 料金表
@@ -583,76 +575,18 @@ body
                   dt Comment :
                   dd.comment
                     h4
-                      |主な事業内容・サービス内容を教えてください。
+                      |ご依頼前（サイトを作る前）に悩んでいたこと、困っていたことは何でしたか
                     p
-                      |ベーカリー&レストラン
+                      |リクルートが厳しい美容業界での、他社と差別化できる方法はないかと悩んでいました。
                     .comment_detail
                       h4
-                        |主な事業内容・サービス内容を教えてください。
+                        |他にも同じような制作会社がありますが、Revisionを選んだ理由と、決め手は何でしたか？
                       p
-                        |ベーカリー&レストラン
-            p.voice__ele_link
-          li.voice__ele.wow.fadeIn
-            .voice__ele_wrap
-              figure.voice__ele_img
-                img(src="../assets/images/top/voice_photo02.jpg", alt="ビューティーアトリエグループ 担当者様")
-              .voice__ele_right
-                dl.voice__ele_detail
-                  dt Client :
-                  dd 
-                    b ビューティーアトリエグループ 様
-                dl.voice__ele_detail
-                  dt Service : 
-                  dd リクルート動画制作 
-                dl.voice__ele_detail
-                  dt Location :
-                  dd 栃木県宇都宮市
-                dl.voice__ele_detail
-                  dt Business :
-                  dd 理容・美容サロン経営
-                dl.voice__ele_detail
-                  dt Comment :
-                  dd.comment
-                    h4
-                      |主な事業内容・サービス内容を教えてください。
-                    p
-                      |ベーカリー&レストラン
-                    .comment_detail
+                        |.movさんで作成された動画がとても魅力的で、周りの人たちからの評判もすごく良かった為
                       h4
-                        |主な事業内容・サービス内容を教えてください。
+                        |依頼した感想
                       p
-                        |ベーカリー&レストラン
-            p.voice__ele_link
-          li.voice__ele.wow.fadeIn
-            .voice__ele_wrap
-              figure.voice__ele_img
-                img(src="../assets/images/top/voice_photo03.jpg", alt="ビューティーアトリエグループ 担当者様")
-              .voice__ele_right
-                dl.voice__ele_detail
-                  dt Client :
-                  dd 
-                    b ビューティーアトリエグループ 様
-                dl.voice__ele_detail
-                  dt Service : 
-                  dd リクルート動画制作 
-                dl.voice__ele_detail
-                  dt Location :
-                  dd 栃木県宇都宮市
-                dl.voice__ele_detail
-                  dt Business :
-                  dd 理容・美容サロン経営
-                dl.voice__ele_detail
-                  dt Comment :
-                  dd.commen.comment
-                    h4
-                      |主な事業内容・サービス内容を教えてください。
-                    p
-                      |ベーカリー&レストラン
-                    .comment_detail
-                      h4
-                        |主な事業内容・サービス内容を教えてください。
-                      p
-                        |ベーカリー&レストラン
+                        |まるでドキュメンタリーを見ているような仕上がり(それ以上)で、見ている者を一瞬で没頭させてしまうような動画になりました。
             p.voice__ele_link
     section.contact#contact
       .page-inner
@@ -764,40 +698,19 @@ body
           .footer__right
             ul.footer__right_list
               li.footer__right_ele
-                a(href="#strengths")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt01_sp.svg")
-                    img(src="../assets/images/common/header_txt01.svg", alt="4つの強み")
+                a(href="#strengths") 3つの強み
               li.footer__right_ele
-                a(href="#technique")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt02_sp.svg")
-                    img(src="../assets/images/common/header_txt02.svg", alt="動画手法")
+                a(href="#technique") 動画手法
               li.footer__right_ele
-                a(href="#works")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt03_sp.svg")
-                    img(src="../assets/images/common/header_txt03.svg", alt="制作実績")
+                a(href="#works") 制作実績
               li.footer__right_ele
-                a(href="#plan")
-                  picture  
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt04_sp.svg")
-                    img(src="../assets/images/common/header_txt04.svg", alt="料金表")
+                a(href="#plan") 料金表
               li.footer__right_ele
-                a(href="#flow")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt05_sp.svg")
-                    img(src="../assets/images/common/header_txt05.svg", alt="納品までの流れ")
+                a(href="#flow") 納品までの流れ
               li.footer__right_ele
-                a(href="#voice")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt06_sp.svg")
-                    img(src="../assets/images/common/header_txt06.svg", alt="お客様の声")
+                a(href="#voice") お客様の声
               li.footer__right_ele
-                a(href="#contact")
-                  picture
-                    source(media="(max-width: 767px)", srcset="../assets/images/common/header_txt07_sp.svg")
-                    img(src="../assets/images/common/header_txt07.svg", alt="お問い合わせ")
+                a(href="#contact") お問い合わせ
             .footer__right_bnr-wrap
               a.footer__right_bnr.normal(href="https://re-v.co.jp/")
                 figure
