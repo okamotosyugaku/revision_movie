@@ -114,6 +114,7 @@ new voice_more();
 new countUp();
 new mov_popup();
 new WOW().init();
+objectFitImages();
 
 let h_height;
 let delay_timeoutId;
